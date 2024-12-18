@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Issue;
+use App\Models\Link;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +12,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class LinkFactory extends Factory
 {
+    protected $model = Link::class;
+
     /**
      * Define the model's default state.
      *
@@ -17,7 +22,12 @@ class LinkFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'url' => $this->faker->url(),
+            'title' => $this->faker->title(),
+            'description' => $this->faker->paragraph(),
+            'position' => rand(1, 10),
+            'user_id' => User::factory(),
+            // 'issue_id' => Issue::factory()
         ];
     }
 }

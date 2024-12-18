@@ -22,7 +22,7 @@ class UpdateLinkRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'url' => 'required|url',
+            'url' => 'required|url|string',
             'title' => 'required|string',
             'description' => 'nullable|string',
             'position' => 'nullable|integer',
