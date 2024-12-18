@@ -24,7 +24,8 @@ return new class extends Migration
                 ->nullable()
                 ->constrained()
                 ->nullOnDelete();
-            $table->integer('position')->nullable();
+            $table->integer('position')
+                ->nullable();
             $table->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete();
