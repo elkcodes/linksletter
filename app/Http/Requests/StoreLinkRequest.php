@@ -22,9 +22,9 @@ class StoreLinkRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'url' => 'required',
-            'title' => 'required',
-            'description' => 'nullable',
+            'url' => 'required|url',
+            'title' => 'required|string',
+            'description' => 'nullable|string',
             'position' => 'nullable|integer',
         ];
     }
